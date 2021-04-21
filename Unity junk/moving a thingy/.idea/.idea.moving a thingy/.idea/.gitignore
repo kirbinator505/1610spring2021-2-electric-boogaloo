@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+/.idea.moving a thingy.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Git Repos\1610spring2021\Unity junk\moving a thingy\.idea\.idea.moving a thingy\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.scripts as behavior components.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Git Repos\1610spring2021\Unity junk\scripts as behavior components\.idea\.idea.scripts as behavior components\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.shape selection.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Git Repos\1610spring2021\Unity junk\shape selection\.idea\.idea.shape selection\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
