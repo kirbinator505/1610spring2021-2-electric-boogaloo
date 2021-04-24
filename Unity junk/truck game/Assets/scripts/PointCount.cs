@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
 
 public class PointCount : MonoBehaviour
 {
-    public int creditvalue = 3;
-    public IntData numbercount;
-    public Text countertext;
+    [SerializeField] private int creditValue = 3;
+    public IntData numberCount;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
+
+    void Awake()
+    {
+        numberCount.value = 0;
+    }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
-        numbercount.value += creditvalue;
-        countertext.text = numbercount.value.ToString();
+        numberCount.value += creditValue;
+        scoreText.text = numberCount.value.ToString();
         gameObject.SetActive(false);
     }
 
     public void Start()
     {
-        countertext.text = numbercount.value.ToString();
+        scoreText.text = numberCount.value.ToString();
     }
 }

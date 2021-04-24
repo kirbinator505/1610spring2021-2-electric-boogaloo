@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RespawnCredits : MonoBehaviour
 {
-    public int timer;
+    [SerializeField] private int timer;
     public GameObject lol;
+
     void Update()
     {
         timer++;

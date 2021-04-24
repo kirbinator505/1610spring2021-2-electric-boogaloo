@@ -1,13 +1,13 @@
 ﻿
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class CountDownBehavior : MonoBehaviour
 {
-    public int num = 3;
-    public float hold = 1f;
-    public Text countdown;
+    [SerializeField] private int num = 3;
+    [SerializeField] private float hold = 1f;
+    [SerializeField] private TextMeshProUGUI countDown;
 
     private WaitForSeconds time;
     private IEnumerator Start()
@@ -16,16 +16,16 @@ public class CountDownBehavior : MonoBehaviour
 
         while (num > 0)
         {
-            countdown.text = num.ToString();
+            countDown.text = num.ToString();
             num--;
             yield return time;
 
         }
 
-        countdown.text = "GO";
+        countDown.text = "GO";
 
         yield return time;
 
-        countdown.text = null;
+        countDown.text = null;
     }
 }
