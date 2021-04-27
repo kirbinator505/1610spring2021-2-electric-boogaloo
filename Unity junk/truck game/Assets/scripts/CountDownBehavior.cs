@@ -2,9 +2,12 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class CountDownBehavior : MonoBehaviour
 {
+    public UnityEvent endCount;
+    
     [SerializeField] private int num = 3;
     [SerializeField] private float hold = 1f;
     [SerializeField] private TextMeshProUGUI countDown;
@@ -23,6 +26,7 @@ public class CountDownBehavior : MonoBehaviour
         }
 
         countDown.text = "GO";
+        endCount.Invoke();
 
         yield return time;
 

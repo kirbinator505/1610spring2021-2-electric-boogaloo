@@ -11,34 +11,34 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private Vector2 ydirection;
 
-    public float speed = 3f;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float jumpForce = 300f;
+    [SerializeField] private int jumpCountMax = 2;
+    private int jumpCount;
 
-    public float jumpForce = 300f;
-
-    public int jumpcountmax = 2;
-    
-    private int jumpcount;
-
-    void Start()
+    private void Awake()
     {
         ballRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        jumpcount = 0;
+        jumpCount = 0;
     }
 
-    void Update()
+    private void Update()
     {
-    direction.x = Input.GetAxis("Horizontal") * speed;
-    ballRigidbody2D.AddForce(direction, ForceMode2D.Force);
+        direction.x = Input.GetAxis("Horizontal") * speed;
+        ballRigidbody2D.AddForce(direction, ForceMode2D.Force);
       
-      if (Input.GetButtonDown("Jump") && jumpcount < jumpcountmax)
-      {
-          ydirection.y = jumpForce;
-          ballRigidbody2D.AddForce(ydirection, ForceMode2D.Force);
-          jumpcount++;
-      }
+        if(!Input.GetButtonDown("Jump") || jumpCount >= jumpCountMax) return;
+        direction.y = jumpForce;
+        ballRigidbody2D.AddForce(direction, ForceMode2D.Impulse);
+        jumpCount++;
+    }
+
+    public void SetRBDynamic()
+    {
+        ballRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
     }
 }
